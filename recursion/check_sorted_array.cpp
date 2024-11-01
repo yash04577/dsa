@@ -13,7 +13,6 @@ bool isSorted(vector<int> &v1, int start){
     }
 
     isSorted(v1, start+1);
-    
 }
 
 int main(){
