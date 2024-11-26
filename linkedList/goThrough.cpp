@@ -39,32 +39,60 @@ void insertAtTail(Node* &head, int val){
     // head ->next = temp;
 }
 
+void insertAtPosition(Node* &head, int val, int position){
+
+
+    Node* tempHead = head;
+
+    if(position == 0){
+        Node* temp = new Node(val);
+        temp->next = tempHead;
+        head = temp;
+        return;
+    }
+
+    while(position > 1){
+        position--;
+        tempHead = tempHead->next;
+    }
+
+    Node* temp = new Node(val);
+    temp->next = tempHead->next;
+    tempHead->next = temp;
+}
+
 int main()
 {
     cout << "Hello world" << endl;
     Node *head = new Node(1);
     print(head);
 
-    insertAtHead(head, 2);
+    // insertAtHead(head, 2);
+    // print(head);
+
+    // insertAtHead(head, 3);
+    // print(head);
+
+    // insertAtHead(head, 4);
+    // print(head);
+    // insertAtHead(head, 5);
+    // print(head);
+
+    insertAtTail(head, 1);
+    print(head);
+    insertAtTail(head, 2);
+    print(head);
+    insertAtTail(head, 3);
+    print(head);
+    insertAtTail(head, 4);
+    print(head);
+    insertAtTail(head, 5);
     print(head);
 
-    insertAtHead(head, 3);
+    cout << endl << endl;
+    insertAtPosition(head, 34, 3);
     print(head);
-
-    insertAtHead(head, 4);
-    print(head);
-    insertAtHead(head, 5);
-    print(head);
-
-    insertAtTail(head, 11);
-    print(head);
-    insertAtTail(head, 12);
-    print(head);
-    insertAtTail(head, 13);
-    print(head);
-    insertAtTail(head, 14);
-    print(head);
-    insertAtTail(head, 15);
+    insertAtPosition(head, 100, 0);
     print(head);
     return 0;
 }

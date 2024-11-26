@@ -1,10 +1,6 @@
-insertAtHead(head, 2);
-    // print(head);
-
-    // insertAtHead(head, 3);
-    // print(head);
-
-    // insertAtHead(head, 4);
-    // print(head);
-    // insertAtHead(head, 5);
-    // print(head);
+if(position == 0){
+        Node* temp = new Node(val);
+        temp->next = tempHead;
+        head = temp;
+        return;
+    }
